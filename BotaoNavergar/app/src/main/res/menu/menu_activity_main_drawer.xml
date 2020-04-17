@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="@string/listar">
+        <menu>
+            <item
+                android:id="@+id/nav_menu_maquina_listar"
+                android:icon="@drawable/ic_01"
+                android:title="@string/m_quina" />
+            <item
+                android:id="@+id/nav_menu_pessoa_listar"
+                android:icon="@drawable/ic_02"
+                android:title="@string/pessoa" />
+            <item
+                android:id="@+id/nav_menu_funcionario_listar"
+                android:icon="@drawable/ic_03"
+                android:title="@string/funcion_rio" />
+            <item
+                android:id="@+id/nav_menu_empresa_listar"
+                android:icon="@drawable/ic_04"
+                android:title="@string/empresa" />
+        </menu>
+
+    </item>
+
+    <item android:title="@string/cadastrar">
+        <menu>
+
+            <item
+                android:id="@+id/nav_menu_empresa"
+                android:icon="@drawable/ic_04"
+                android:title="@string/empresa" />
+            <item
+                android:id="@+id/nav_menu_relacionamento"
+                android:icon="@drawable/ic_01"
+                android:title="@string/relacionamento" />
+            <item
+                android:id="@+id/nav_menu_turno"
+                android:icon="@drawable/ic_07"
+                android:title="@string/turno" />
+
+            <item
+                android:id="@+id/nav_menu_cargo"
+                android:icon="@drawable/ic_09"
+                android:title="@string/cargo" />
+
+            <item
+                android:id="@+id/nav_menu_pessoa"
+                android:icon="@drawable/ic_01"
+                android:title="@string/pessoa" />
+
+
+        </menu>
+
+    </item>
+
+
+</menu>

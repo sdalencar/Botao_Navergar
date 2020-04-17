@@ -1,0 +1,103 @@
+<resources>
+    <string name="app_name">Sob Controle</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Título</string>
+    <string name="nav_header_subtitle">Sub-Título</string>
+    <string name="nav_header_desc">Cabeçalho</string>
+    <string name="action_settings">Configurar</string>
+
+
+    <string name="home_second">Home Second</string>
+    <string name="usu_rio">Usuário</string>
+    <string name="data">data</string>
+    <string name="turno">Turno</string>
+    <string name="img">img</string>
+    <string name="encerrar">Encerrar</string>
+
+
+    <string name="menu_primeira">Home</string>
+    <string name="menu_segunda">Caixa</string>
+    <string name="menu_terceiro">Leitura</string>
+    <string name="menu_quarto">Quarto</string>
+    <string name="menu_quinto">Quinto</string>
+    <string name="menu_sexto">Sexto</string>
+    <string name="menu_setimo">Setimo</string>
+    <string name="menu_oitavo">Oitavo</string>
+    <string name="menu_nono">Nono</string>
+    <string name="menu_decimo">Décimo</string>
+    <string name="menu_decimo_primeiro">décimo Primeiro</string>
+    <string name="menu_decimo_segundo">Décimo Segundo</string>
+    <string name="menu_decimo_terceiro">Décimo Terceiro</string>
+    <string name="menu_decimo_quarto">Décimo Quarto</string>
+    <string name="menu_decimo_quinto">Décimo Quinto</string>
+    <string name="menu_decimo_sexto">Décimo Sexto</string>
+    <string name="menu_decimo_setimo">Décimo Setimo</string>
+    <string name="menu_decimo_oitavo">Décimo Oitavo</string>
+    <string name="menu_decimo_nono">Décimo Nono</string>
+    <string name="menu_vigesimo">Vigésimo</string>
+    <string name="nome">Nome</string>
+    <string name="endere_o">Endereço</string>
+    <string name="telefone">Telefone</string>
+    <string name="observa_o">Observação</string>
+    <string name="descartar">Descartar</string>
+    <string name="salvar">Salvar</string>
+    <string name="opcoes">Opções</string>
+    <string name="sim">Sim</string>
+    <string name="nao">Não</string>
+    <string name="sair">Sair</string>
+    <string name="texto">Sistema para o controle de valores.\nO correto preenchimeto garante \num controle maior.</string>
+    <string name="respons_vel">Responsável</string>
+    <string name="funcion_rio">Funcionário</string>
+    <string name="date">Data</string>
+    <string name="data_numero">00/00/00</string>
+    <string name="fdo_caixa">Fdo Caixa</string>
+    <string name="valor">R$ 0,00</string>
+    <string name="vales">Vales</string>
+    <string name="cheque">Cheque</string>
+
+    <string name="pg_manual">Pg Manual</string>
+    <string name="pg_funcion_rio">Pg Funcionário</string>
+    <string name="despesas">Despesas</string>
+    <string name="desp_extras">Desp. Extras</string>
+    <string name="cartoes">Cartões</string>
+    <string name="outros">Outros</string>
+    <string name="m_quina">Máquina</string>
+    <string name="entrada">Entrada</string>
+    <string name="saida">Saida</string>
+    <string name="gravar">Gravar</string>
+    <string name="leitura">Leitura</string>
+    <string name="n_mero">Número</string>
+    <string name="buscar">Buscar</string>
+    <string name="n_mero_da_m_quina">Número da Máquina</string>
+    <string name="pessoa">Pessoa</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="empresa">Empresa</string>
+    <string name="listar">Listar</string>
+    <string name="Fechar">fechar</string>
+    <string name="Abrir">abrir</string>
+    <string name="voltar">Voltar</string>
+    <string name="dados_da_empresa">Dados da Empresa</string>
+    <string name="apagar">Apagar</string>
+    <string name="atualizar">Atualizar</string>
+
+    <string name="atencao">Atenção</string>
+    <string name="msg_atencao_atualizar">Você tem certeza que quer Atualizar os dados?</string>
+    <string name="msg_atencao_apagar">Você tem certeza que quer apagar os dados?</string>
+    <string name="msg_acao_cancelada">Ação cancelada.</string>
+    <string name="cargo">Cargo</string>
+    <string name="descreva_a_quantidade_de_turno_numero">Descreva com números.</string>
+    <string name="descreva_a_quantidade_de_turno_letra">Descreva com letras.</string>
+    <string name="erro_campos_vazios">Preenchas os campos corretamente.</string>
+    <string name="dados_atualizados">Dados Atualizados</string>
+    <string name="erro_dados_atualizados">ERRO: Dados não Atualizados</string>
+    <string name="dados_dos_turnos">Dados dos Turnos</string>
+    <string name="escrito">Escrito</string>
+    <string name="dados_de_turnos">Dados de Turnos</string>
+    <string name="relacionamento">Relacionamento</string>
+    <string name="traco">"  ---  "</string>
+    <string name="alias">Apelido</string>
+    <string name="celular">Celular</string>
+
+
+</resources>
