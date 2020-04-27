@@ -29,7 +29,6 @@ public class CriarBancoDados extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL(Constantes.DELETE_TABLE + Constantes.CREATE_TB_EMPRESA);
         onCreate(db);
     }
 }
