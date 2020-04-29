@@ -1,12 +1,10 @@
 package com.sda.botaonavergar.rel;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -25,7 +23,7 @@ public class RelacionamentoAtualizaActivity extends AppCompatActivity {
 
     private EditText txtnome;
     private AlertDialog alerta;
-    private Button btAtualizar, btDeletar, btVoltar;
+    private Button btdireito, btesquerdo;
     private int id = 0;
     private String snome = "";
     private Context ctx;
@@ -34,7 +32,7 @@ public class RelacionamentoAtualizaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.relacionamento_dialogo_layout);
+        setContentView(R.layout.relacionamento_atualiza_layout);
 
         ctx = this;
         msg = new Mensagem();
@@ -44,9 +42,9 @@ public class RelacionamentoAtualizaActivity extends AppCompatActivity {
 
         id = i.getExtras().getInt(Constantes.ID);
         snome = i.getExtras().getString(Constantes.NOME);
-        exibirDialogo();
+        iniciaComponentes();
 
-        FloatingActionButton fab = findViewById(R.id.fab_relacionamento_dialogo);
+        FloatingActionButton fab = findViewById(R.id.fab_buttons_rodape);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,48 +53,31 @@ public class RelacionamentoAtualizaActivity extends AppCompatActivity {
         });
     }
 
-    private void exibirDialogo() {
-        final Dialog d = new Dialog(this);
+    private void iniciaComponentes() {
 
-        //NO TITLE
-        d.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        //layout of dialog
-        d.setContentView(R.layout.relacionamento_dialogo);
-        txtnome = (EditText) d.findViewById(R.id.dia_relacionamento_nome);
+        txtnome = findViewById(R.id.et_relacionamento_atualiza_nome);
 
         txtnome.setText(snome);
 
-        btAtualizar = d.findViewById(R.id.dia_relacionamento_btatualizar);
-        btDeletar = d.findViewById(R.id.dia_relacionamento_btdeletar);
-        btVoltar = d.findViewById(R.id.dia_relacionamento_btvoltar);
+        btdireito = findViewById(R.id.bts_direita);
+        btesquerdo = findViewById(R.id.bts_esquerda);
+        btdireito.setText(getResources().getString(R.string.atualizar));
+        btesquerdo.setText(getResources().getString(R.string.apagar));
 
 
-        //ONCLICK LISTENERS
-        btAtualizar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                avisoAcaoAtualizar();
-            }
-        });
-
-        btDeletar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                avisoAcaoDeletar();
-            }
-        });
-
-        btVoltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-
-        //SHOW DIALOG
-        d.show();
     }
 
+    public void onClickRodape(View view) {
+        switch (view.getId()) {
+            case R.id.bts_direita:
+                avisoAcaoAtualizar();
+                break;
+            case R.id.bts_esquerda:
+                avisoAcaoDeletar();
+                break;
+        }
+
+    }
 
     private void deletar(int id) {
         RelacionamentoDao dao = new RelacionamentoDao(ctx);
@@ -116,9 +97,9 @@ public class RelacionamentoAtualizaActivity extends AppCompatActivity {
         db.openDB();
         long result = db.atualiza(id, nome);
         if (result > 0) {
-            msg.mensagenCurta(ctx, getResources().getString(R.string.dados_atualizados));
+            msg.mensagenCurta(ctx, getResources().getString(R.string.msg_dados_atualizados));
         } else {
-            msg.mensagenCurta(ctx, getResources().getString(R.string.erro_dados_atualizados));
+            msg.mensagenCurta(ctx, getResources().getString(R.string.msg_erro_dados_atualizados));
         }
         db.close();
         finish();

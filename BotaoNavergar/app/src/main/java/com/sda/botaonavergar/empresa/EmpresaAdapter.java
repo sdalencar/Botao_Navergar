@@ -46,7 +46,7 @@ public class EmpresaAdapter extends RecyclerView.Adapter<EmpresaHolder> {
                 //PASS DATA
 
                 //CREATE INTENT
-                Intent i = new Intent(ctx, EmpresaDialogoActivity.class);
+                Intent i = new Intent(ctx, EmpresaAtualizaActivity.class);
 
                 //LOAD DATA
                 i.putExtra(Constantes.ID, empresas.get(pos).getId());

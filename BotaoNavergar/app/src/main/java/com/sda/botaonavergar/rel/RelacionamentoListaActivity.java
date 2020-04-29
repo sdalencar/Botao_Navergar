@@ -43,7 +43,7 @@ public class RelacionamentoListaActivity extends AppCompatActivity {
 
         busbarRelacionmento();
 
-        FloatingActionButton fab = findViewById(R.id.fab_relacionamento_lista);
+        FloatingActionButton fab = findViewById(R.id.fab_rodape_fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

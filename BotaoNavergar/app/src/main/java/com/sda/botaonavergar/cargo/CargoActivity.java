@@ -31,11 +31,11 @@ public class CargoActivity extends AppCompatActivity {
     }
 
     private void iniciaComponentes() {
-        enome = findViewById(R.id.editText_cargo_nome);
+        enome = findViewById(R.id.et_cargo_nome);
         msg = new Mensagem();
         ctx = this;
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_cargo);
+        FloatingActionButton fab = findViewById(R.id.fab_buttons_rodape);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,12 +44,12 @@ public class CargoActivity extends AppCompatActivity {
         });
     }
 
-    public void onClickCargo(View view) {
+    public void onClickRodape(View view) {
         switch (view.getId()) {
-            case R.id.button_cargo_grava:
+            case R.id.bts_direita:
                 verificaCampos();
                 break;
-            case R.id.button_cargo_listar:
+            case R.id.bts_esquerda:
                 startActivity(new Intent(ctx, CargoListaActivity.class));
                 break;
         }
@@ -58,7 +58,7 @@ public class CargoActivity extends AppCompatActivity {
 
     private void verificaCampos() {
         if(enome.getText().toString().equals("")){
-             msg.mensagenCurta(ctx, getResources().getString(R.string.erro_campos_vazios));
+             msg.mensagenCurta(ctx, getResources().getString(R.string.msg_erro_campos_vazios));
         }else {
             salvarCargo();
         }

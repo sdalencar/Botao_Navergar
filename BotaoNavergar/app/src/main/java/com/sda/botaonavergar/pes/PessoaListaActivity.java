@@ -43,7 +43,7 @@ public class PessoaListaActivity extends AppCompatActivity {
 
         buscar();
 
-        FloatingActionButton fab = findViewById(R.id.fab_pes_lista);
+        FloatingActionButton fab = findViewById(R.id.fab_rodape_fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

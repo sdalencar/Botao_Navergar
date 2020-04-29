@@ -50,7 +50,7 @@ public class PessoaAdapter extends RecyclerView.Adapter<PessoaHolder> {
                 //PASS DATA
 
                 //CREATE INTENT
-                Intent i = new Intent(ctx, PessoaDialogoActivity.class);
+                Intent i = new Intent(ctx, PessoaAtualizaActivity.class);
 
                 //LOAD DATA
                 i.putExtra(Constantes.ID, pessoas.get(pos).getId());

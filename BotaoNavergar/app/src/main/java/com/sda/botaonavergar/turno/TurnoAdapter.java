@@ -48,7 +48,7 @@ public class TurnoAdapter extends RecyclerView.Adapter<TurnoHolder> {
                 //PASS DATA
 
                 //CREATE INTENT
-                Intent i = new Intent(ctx, TurnoDialogoActivity.class);
+                Intent i = new Intent(ctx, TurnoAtualizaActivity.class);
 
                 //LOAD DATA
                 i.putExtra(Constantes.ID, turnos.get(pos).getId());

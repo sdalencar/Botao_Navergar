@@ -32,12 +32,12 @@ public class TurnoActivity extends AppCompatActivity {
     }
 
     private void iniciaComponentes() {
-        enumero = findViewById(R.id.editText_turno_numero);
-        enome = findViewById(R.id.editText_turno_nome);
+        enumero = findViewById(R.id.et_turno_numero);
+        enome = findViewById(R.id.et_turno_escrito);
         msg = new Mensagem();
         ctx = this;
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_turno);
+        FloatingActionButton fab = findViewById(R.id.fab_buttons_rodape);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,12 +46,12 @@ public class TurnoActivity extends AppCompatActivity {
         });
     }
 
-    public void onClickTurno(View view) {
+    public void onClickRodape(View view) {
         switch (view.getId()) {
-            case R.id.button_turno_grava:
+            case R.id.bts_direita:
                 verificaCampos();
                 break;
-            case R.id.button_turno_listar:
+            case R.id.bts_esquerda:
                 startActivity(new Intent(ctx, TurnoListaActivity.class));
                 break;
         }
@@ -60,7 +60,7 @@ public class TurnoActivity extends AppCompatActivity {
 
     private void verificaCampos() {
         if(enome.getText().toString().equals("") || enumero.getText().toString().equals("")){
-             msg.mensagenCurta(ctx, getResources().getString(R.string.erro_campos_vazios));
+             msg.mensagenCurta(ctx, getResources().getString(R.string.msg_erro_campos_vazios));
         }else {
             salvaTurno();
         }

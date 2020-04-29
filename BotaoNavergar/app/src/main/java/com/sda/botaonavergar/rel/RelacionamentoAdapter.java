@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sda.botaonavergar.R;
-import com.sda.botaonavergar.cargo.CargoDialogoActivity;
 import com.sda.botaonavergar.util.Constantes;
 import com.sda.botaonavergar.util.ItemClickListener;
 

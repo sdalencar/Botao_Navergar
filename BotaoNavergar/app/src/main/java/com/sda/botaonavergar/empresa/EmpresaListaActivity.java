@@ -41,7 +41,7 @@ public class EmpresaListaActivity extends AppCompatActivity {
 
         bucarEmpresas();
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_empresa_lista);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_rodape_fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

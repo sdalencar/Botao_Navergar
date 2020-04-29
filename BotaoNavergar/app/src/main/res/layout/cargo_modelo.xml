@@ -8,21 +8,18 @@
 
     <TextView
         android:id="@+id/modelo_cargo_nome"
-        android:layout_width="match_parent"
+        android:layout_width="@dimen/width_04"
         android:layout_height="wrap_content"
         android:text="@string/nome"
         android:textColor="@color/branco"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="@dimen/texto30"
         tools:ignore="RelativeOverlap" />
 
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="@dimen/width_04"
         android:layout_height="wrap_content"
-        android:text="@string/traco"
-        android:textColor="@color/branco"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        tools:ignore="RelativeOverlap" />
+        android:background="@color/brancoOpaco" />
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

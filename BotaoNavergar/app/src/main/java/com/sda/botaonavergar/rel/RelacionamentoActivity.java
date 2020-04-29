@@ -27,11 +27,11 @@ public class RelacionamentoActivity extends AppCompatActivity {
     }
 
     private void iniciaComponentes() {
-        enome = findViewById(R.id.editText_relacionamento_nome);
+        enome = findViewById(R.id.et_relacionamento_nome);
         msg = new Mensagem();
         ctx = this;
 
-        FloatingActionButton fab = findViewById(R.id.fab_relacionamento);
+        FloatingActionButton fab = findViewById(R.id.fab_buttons_rodape);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,12 +40,12 @@ public class RelacionamentoActivity extends AppCompatActivity {
         });
     }
 
-    public void onClickRelacao(View view) {
+    public void onClickRodape(View view) {
         switch (view.getId()) {
-            case R.id.button_relacionamento_grava:
+            case R.id.bts_direita:
                 verificaCampos();
                 break;
-            case R.id.button_relacionamento_listar:
+            case R.id.bts_esquerda:
                 startActivity(new Intent(ctx, RelacionamentoListaActivity.class));
                 break;
         }
@@ -54,7 +54,7 @@ public class RelacionamentoActivity extends AppCompatActivity {
 
     private void verificaCampos() {
         if(enome.getText().toString().equals("")){
-             msg.mensagenCurta(ctx, getResources().getString(R.string.erro_campos_vazios));
+             msg.mensagenCurta(ctx, getResources().getString(R.string.msg_erro_campos_vazios));
         }else {
             salvarRelacionamento();
         }

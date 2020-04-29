@@ -8,35 +8,30 @@
 
     <TextView
         android:id="@+id/modelo_empresa_nome"
-        android:layout_width="match_parent"
+        android:layout_width="@dimen/width_04"
         android:layout_height="wrap_content"
-        android:text="@string/nome"
         android:textColor="@color/branco"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        tools:ignore="RelativeOverlap" />
+        android:textSize="@dimen/texto30"
+         />
 
     <TextView
         android:id="@+id/modelo_empresa_endereco"
-        android:layout_width="match_parent"
+        android:layout_width="@dimen/width_04"
         android:layout_height="wrap_content"
         android:textColor="@color/branco"
-        android:text="@string/endere_o"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textSize="@dimen/texto30" />
 
     <TextView
         android:id="@+id/modelo_empresa_telefone"
-        android:layout_width="match_parent"
+        android:layout_width="@dimen/width_04"
         android:layout_height="wrap_content"
         android:textColor="@color/branco"
-        android:text="@string/telefone"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textSize="@dimen/texto30" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="@dimen/width_04"
         android:layout_height="wrap_content"
-        android:textColor="@color/branco"
-        android:text="@string/traco"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:background="@color/brancoOpaco" />
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

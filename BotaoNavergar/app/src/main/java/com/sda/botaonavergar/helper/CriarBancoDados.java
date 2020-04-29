@@ -22,6 +22,14 @@ public class CriarBancoDados extends SQLiteOpenHelper {
             db.execSQL(Constantes.CREATE_TB_CARGO);
             db.execSQL(Constantes.CREATE_TB_RELACIONAMENTO);
             db.execSQL(Constantes.CREATE_TB_PESSOA);
+            db.execSQL(Constantes.CREATE_TB_CARTAO);
+            db.execSQL(Constantes.CREATE_TB_VALE_FEITO);
+            db.execSQL(Constantes.CREATE_TB_VALE_PAGO);
+            db.execSQL(Constantes.CREATE_TB_BONUS);
+            db.execSQL(Constantes.CREATE_TB_TIPO_BONUS);
+            db.execSQL(Constantes.CREATE_TB_CARTOES);
+            db.execSQL(Constantes.CREATE_TB_DESPESA);
+            db.execSQL(Constantes.CREATE_TB_DESPESA_ADD);
         }catch (SQLException e){
             e.printStackTrace();
         }

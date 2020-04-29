@@ -16,26 +16,6 @@
     <string name="encerrar">Encerrar</string>
 
 
-    <string name="menu_primeira">Home</string>
-    <string name="menu_segunda">Caixa</string>
-    <string name="menu_terceiro">Leitura</string>
-    <string name="menu_quarto">Quarto</string>
-    <string name="menu_quinto">Quinto</string>
-    <string name="menu_sexto">Sexto</string>
-    <string name="menu_setimo">Setimo</string>
-    <string name="menu_oitavo">Oitavo</string>
-    <string name="menu_nono">Nono</string>
-    <string name="menu_decimo">Décimo</string>
-    <string name="menu_decimo_primeiro">décimo Primeiro</string>
-    <string name="menu_decimo_segundo">Décimo Segundo</string>
-    <string name="menu_decimo_terceiro">Décimo Terceiro</string>
-    <string name="menu_decimo_quarto">Décimo Quarto</string>
-    <string name="menu_decimo_quinto">Décimo Quinto</string>
-    <string name="menu_decimo_sexto">Décimo Sexto</string>
-    <string name="menu_decimo_setimo">Décimo Setimo</string>
-    <string name="menu_decimo_oitavo">Décimo Oitavo</string>
-    <string name="menu_decimo_nono">Décimo Nono</string>
-    <string name="menu_vigesimo">Vigésimo</string>
     <string name="nome">Nome</string>
     <string name="endere_o">Endereço</string>
     <string name="telefone">Telefone</string>
@@ -70,7 +50,7 @@
     <string name="n_mero">Número</string>
     <string name="buscar">Buscar</string>
     <string name="n_mero_da_m_quina">Número da Máquina</string>
-    <string name="pessoa">Pessoa</string>
+    <string name="add_pessoa">Add Pessoa</string>
     <string name="cadastrar">Cadastrar</string>
     <string name="empresa">Empresa</string>
     <string name="listar">Listar</string>
@@ -82,22 +62,53 @@
     <string name="atualizar">Atualizar</string>
 
     <string name="atencao">Atenção</string>
-    <string name="msg_atencao_atualizar">Você tem certeza que quer Atualizar os dados?</string>
-    <string name="msg_atencao_apagar">Você tem certeza que quer apagar os dados?</string>
-    <string name="msg_acao_cancelada">Ação cancelada.</string>
+
     <string name="cargo">Cargo</string>
     <string name="descreva_a_quantidade_de_turno_numero">Descreva com números.</string>
     <string name="descreva_a_quantidade_de_turno_letra">Descreva com letras.</string>
-    <string name="erro_campos_vazios">Preenchas os campos corretamente.</string>
-    <string name="dados_atualizados">Dados Atualizados</string>
-    <string name="erro_dados_atualizados">ERRO: Dados não Atualizados</string>
+
+
     <string name="dados_dos_turnos">Dados dos Turnos</string>
-    <string name="escrito">Escrito</string>
     <string name="dados_de_turnos">Dados de Turnos</string>
     <string name="relacionamento">Relacionamento</string>
-    <string name="traco">"  ---  "</string>
     <string name="alias">Apelido</string>
     <string name="celular">Celular</string>
+
+    <string name="escrito">Escrito</string>
+
+
+    <string name="msg_dados_atualizados">Dados Atualizados</string>
+    <string name="msg_atencao_atualizar">Você tem certeza que quer Atualizar os dados?</string>
+
+    <string name="msg_atencao_apagar">Você tem certeza que quer apagar os dados?</string>
+    <string name="msg_acao_cancelada">Ação cancelada.</string>
+
+    <string name="msg_erro_dados_atualizados">ERRO: Dados não Atualizados</string>
+    <string name="msg_erro_campos_vazios">Preenchas os campos corretamente.</string>
+
+    <string name="msg_erro_deletar">ERRO: Dados não deletados</string>
+    <string name="msg_deletar">Dados deletados com Sucesso</string>
+    <string name="tipos_de_bon_s">Tipos de Bonûs</string>
+    <string name="apelido">Apelido</string>
+    <string name="atualizar_dados_pessoa">Atualizar Dados Pessoa</string>
+    <string name="numeral">Numeral</string>
+    <string name="msg_salvando_dados">Salvando os dados</string>
+    <string name="msg_erro_salvando_dados">ERRO Salvando os dados</string>
+    <string name="escolhoa_opcao">Escolha uma Opção</string>
+    <string name="add_vale_feito">Add Vale Feito</string>
+    <string name="status_cheque">Status Cheque</string>
+    <string name="add_vale_pago">Add Vale Pago</string>
+    <string name="add_bonus">Add Bônus</string>
+    <string name="add_cartoes">Add Cartões</string>
+    <string name="add_cart_es">Add Cartões</string>
+    <string name="primeiros_cadastros">Primeiros Cadastros</string>
+    <string name="add_ao_caixa">Add ao Caixa</string>
+    <string name="relatorios">Relatorios</string>
+    <string name="configura_es">Configurações</string>
+    <string name="caixa">Caixa</string>
+    <string name="b_nus">Bônus</string>
+    <string name="add_despesa">Add Despesa</string>
+    <string name="despesa">Despesa</string>
 
 
 </resources>

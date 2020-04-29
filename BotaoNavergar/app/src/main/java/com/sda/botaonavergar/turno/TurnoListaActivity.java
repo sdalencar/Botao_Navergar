@@ -44,7 +44,7 @@ public class TurnoListaActivity extends AppCompatActivity {
 
         buscar();
 
-        FloatingActionButton fab = findViewById(R.id.fab_turno_lista);
+        FloatingActionButton fab = findViewById(R.id.fab_rodape_fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

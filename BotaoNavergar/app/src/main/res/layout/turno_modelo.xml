@@ -1,35 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="@dimen/width_04"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
 
 
     <TextView
         android:id="@+id/modelo_turno_numero"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/width_01"
         android:layout_weight="1"
         android:layout_height="wrap_content"
-        android:text="@string/n_mero"
         android:textColor="@color/branco"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="@dimen/texto30"
         tools:ignore="RelativeOverlap" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/traco"
         android:textColor="@color/branco"
          />
 
     <TextView
         android:id="@+id/modelo_turno_nome"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/width_03"
         android:layout_weight="3"
         android:layout_height="wrap_content"
-        android:text="@string/nome"
         android:textColor="@color/branco"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="@dimen/texto30"
         tools:ignore="RelativeOverlap" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

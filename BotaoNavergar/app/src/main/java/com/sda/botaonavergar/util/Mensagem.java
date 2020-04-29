@@ -18,7 +18,7 @@ import com.sda.botaonavergar.R;
 
 public class Mensagem {
 
-        private static final String CONECTADO = "CONECTADO";
+        
         private ProgressDialog mProgressDialog;
         private AlertDialog alerta;
         private Context ctx;
@@ -98,42 +98,6 @@ public class Mensagem {
         }
 
 
-    private void showDialog(Context ctx)
-    {
-        Dialog d=new Dialog(ctx);
-
-        //NO TITLE
-        d.requestWindowFeature(Window.FEATURE_NO_TITLE);
-
-
-        //layout of dialog
-        d.setContentView(R.layout.leitura_dialogo);
-
-        EditText  numero= (EditText) d.findViewById(R.id.dia_et_numero);
-        EditText  entrada= (EditText) d.findViewById(R.id.dia_et_entrada);
-        EditText  saida= (EditText) d.findViewById(R.id.dia_et_saida);
-        Button salvar= (Button) d.findViewById(R.id.dia_bt_salvar);
-        Button sair= (Button) d.findViewById(R.id.dia_bt_cancelar);
-
-        //ONCLICK LISTENERS
-        salvar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               // save(nameTxt.getText().toString(),posTxt.getText().toString());
-            }
-        });
-
-        sair.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                //retrieve();
-            }
-        });
-
-        //SHOW DIALOG
-        d.show();
-    }
 
 
 

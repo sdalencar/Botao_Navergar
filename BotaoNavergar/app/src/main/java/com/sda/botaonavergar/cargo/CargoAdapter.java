@@ -47,7 +47,7 @@ public class CargoAdapter extends RecyclerView.Adapter<CargoHolder> {
                 //PASS DATA
 
                 //CREATE INTENT
-                Intent i = new Intent(ctx, CargoDialogoActivity.class);
+                Intent i = new Intent(ctx, CargoAtualizaActivity.class);
 
                 //LOAD DATA
                 i.putExtra(Constantes.ID, cargos.get(pos).getId());

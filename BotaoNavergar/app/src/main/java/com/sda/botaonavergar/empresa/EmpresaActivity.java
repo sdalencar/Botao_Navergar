@@ -29,13 +29,13 @@ public class EmpresaActivity extends AppCompatActivity {
     }
 
     private void iniciaComponentes() {
-        enome = findViewById(R.id.editText_empresa_nome);
-        eendereco = findViewById(R.id.editText_empresa_endereco);
-        etelefone = findViewById(R.id.editText_empresa_telefone);
+        enome = findViewById(R.id.et_empresa_nome);
+        eendereco = findViewById(R.id.et_empresa_endereco);
+        etelefone = findViewById(R.id.et_empresa_telefone);
         msg = new Mensagem();
         ctx = this;
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_empresa);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_buttons_rodape);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,12 +44,12 @@ public class EmpresaActivity extends AppCompatActivity {
         });
     }
 
-    public void onClickEmpresa(View view) {
+    public void onClickRodape(View view) {
         switch (view.getId()) {
-            case R.id.button_acempre_grava:
+            case R.id.bts_direita:
                 verificaCampos();
                 break;
-            case R.id.button_acempre_listar:
+            case R.id.bts_esquerda:
                 startActivity(new Intent(ctx, EmpresaListaActivity.class));
                 break;
         }
@@ -58,7 +58,7 @@ public class EmpresaActivity extends AppCompatActivity {
 
     private void verificaCampos() {
         if(enome.getText().toString().equals("") ||eendereco.getText().toString().equals("")||etelefone.getText().toString().equals("")){
-             msg.mensagenCurta(ctx, getResources().getString(R.string.erro_campos_vazios));
+             msg.mensagenCurta(ctx, getResources().getString(R.string.msg_erro_campos_vazios));
         }else {
             salvarEmpresa();
         }

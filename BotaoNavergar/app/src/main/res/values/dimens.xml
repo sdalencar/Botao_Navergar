@@ -9,7 +9,19 @@
 
     <dimen name="fab_margin">16dp</dimen>
 
-    <dimen name="text_margin">16dp</dimen>
+    <dimen name="texto15">15sp</dimen>
+    <dimen name="texto20">20sp</dimen>
+    <dimen name="texto25">25sp</dimen>
+    <dimen name="texto30">30sp</dimen>
+
+    <dimen name="width_04">400dp</dimen>
+    <dimen name="width_03">300dp</dimen>
+    <dimen name="width_025">250dp</dimen>
+    <dimen name="width_02">200dp</dimen>
+    <dimen name="width_015">150dp</dimen>
+    <dimen name="width_01">100dp</dimen>
+    <dimen name="width_012">120dp</dimen>
+    <dimen name="width_008">80dp</dimen>
 
 
 </resources>
