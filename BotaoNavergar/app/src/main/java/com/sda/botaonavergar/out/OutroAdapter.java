@@ -44,7 +44,7 @@ public class OutroAdapter extends RecyclerView.Adapter<OutroHolder> {
     @Override
     public void onBindViewHolder(OutroHolder holder, int position) {
         holder.nome.setText(outros.get(position).getOutro());
-        holder.valor.setText(String.valueOf(outros.get(position).getValor()));
+        holder.valor.setText("R$ " + outros.get(position).getValor());
 
         holder.setItemClickListener(new ItemClickListener() {
             @Override

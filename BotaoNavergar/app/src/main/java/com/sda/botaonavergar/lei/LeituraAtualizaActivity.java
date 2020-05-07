@@ -1,40 +1,37 @@
-package com.sda.botaonavergar.out;
+package com.sda.botaonavergar.lei;
 
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.sda.botaonavergar.R;
+import com.sda.botaonavergar.empresa.EmpresaDao;
 import com.sda.botaonavergar.util.Constantes;
 import com.sda.botaonavergar.util.Utilidades;
 
-/**
- * made by sda
- */
-public class OutroAtualizaActivity extends AppCompatActivity {
+public class LeituraAtualizaActivity extends AppCompatActivity {
 
-    private EditText enome, evalor;
+    private EditText enumero, eentrada, esaida;
     private AlertDialog alerta;
-    private Button btdireito, btesquerdo;
+    private Button btdireita, btesquerda;
     private int id = 0;
-    private String snome;
-    private double dvalor;
+    private int inumero, ientrada, isaida;
     private Context ctx;
     private Utilidades msg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.dois_activity);
+        setContentView(R.layout.empresa_activity);
 
         ctx = this;
         msg = new Utilidades();
@@ -43,10 +40,10 @@ public class OutroAtualizaActivity extends AppCompatActivity {
         Intent i = getIntent();
 
         id = i.getExtras().getInt(Constantes.ID);
-        snome = i.getExtras().getString(Constantes.NOME);
-        dvalor = i.getExtras().getDouble(Constantes.VALOR);
+        inumero = i.getExtras().getInt(Constantes.NUMERO);
+        ientrada = i.getExtras().getInt(Constantes.ENTRADA);
+        isaida = i.getExtras().getInt(Constantes.SAIDA);
 
-        iniciaComponentes();
 
         FloatingActionButton fab = findViewById(R.id.fab_buttons_rodape);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -55,26 +52,47 @@ public class OutroAtualizaActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        iniciaComponentes();
     }
 
     private void iniciaComponentes() {
 
-        enome = findViewById(R.id.dois_primeiro_tv);
-        evalor = findViewById(R.id.dois_segundo_tv);
+        enumero = findViewById(R.id.et_empresa_nome);
+        enumero.setHint(getResources().getString(R.string.n_mero));
+        enumero.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_NORMAL);
 
-        TextView tv = findViewById(R.id.titulo);
-        tv.setText(getResources().getString(R.string.atualiza_outro));
-        tv.setTextSize(40);
+        eentrada = findViewById(R.id.et_empresa_telefone);
+        eentrada.setHint(getResources().getString(R.string.entrada));
+        eentrada.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_NORMAL);
 
-        enome.setText(snome);
-        evalor.setText(String.valueOf(dvalor));
+        esaida = findViewById(R.id.et_empresa_endereco);
+        esaida.setHint(getResources().getString(R.string.saida));
+        esaida.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_NORMAL);
 
-        btdireito = findViewById(R.id.bts_direita);
-        btesquerdo = findViewById(R.id.bts_esquerda);
-        btdireito.setText(getResources().getString(R.string.atualizar));
-        btesquerdo.setText(getResources().getString(R.string.apagar));
+        enumero.setText(String.valueOf(inumero));
+        esaida.setText(String.valueOf(ientrada));
+        eentrada.setText(String.valueOf(isaida));
+
+        btdireita = findViewById(R.id.bts_direita);
+        btdireita.setText(getResources().getString(R.string.atualizar));
+        btesquerda = findViewById(R.id.bts_esquerda);
+        btesquerda.setText(getResources().getString(R.string.apagar));
+    }
 
 
+    private void deletar(int id) {
+        LeituraDao dao = new LeituraDao(ctx);
+        dao.openDB();
+        long resultado = dao.apagar(id);
+        if (resultado != 0) {
+            msg.mensagenCurta(ctx, getResources().getString(R.string.msg_deletar));
+            //this.finish();
+        } else {
+            msg.mensagenCurta(ctx, getResources().getString(R.string.msg_erro_deletar));
+        }
+        dao.close();
+        finish();
     }
 
     public void onClickRodape(View view) {
@@ -89,23 +107,10 @@ public class OutroAtualizaActivity extends AppCompatActivity {
 
     }
 
-    private void deletar(int id) {
-        OutroDao dao = new OutroDao(ctx);
-        dao.openDB();
-        long resultado = dao.apaga(id);
-        if (resultado != 0) {
-            msg.mensagenCurta(ctx, "Dados Deletados com Sucesso ");
-        } else {
-            msg.mensagenCurta(ctx, "ERRO: Dados não deletados ");
-        }
-        dao.close();
-        finish();
-    }
-
-    private void atualizar(int id, String nome, double valor) {
-        OutroDao db = new OutroDao(ctx);
+    private void atualizar(int id, int numero, int entrada, int saida) {
+        LeituraDao db = new LeituraDao(ctx);
         db.openDB();
-        long result = db.atualiza(id, nome, valor);
+        long result = db.atualizar(id, numero, entrada, saida);
         if (result > 0) {
             msg.mensagenCurta(ctx, getResources().getString(R.string.msg_dados_atualizados));
         } else {
@@ -126,7 +131,7 @@ public class OutroAtualizaActivity extends AppCompatActivity {
         //define um botão como positivo
         builder.setPositiveButton(R.string.sim, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface arg0, int arg1) {
-                atualizar(id, enome.getText().toString(), Double.parseDouble(evalor.getText().toString()));
+                atualizar(id, Integer.parseInt(enumero.getText().toString()), Integer.parseInt(esaida.getText().toString()), Integer.parseInt(eentrada.getText().toString()));
             }
         });
         //define um botão como negativo.

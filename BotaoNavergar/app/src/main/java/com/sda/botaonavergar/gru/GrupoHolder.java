@@ -1,4 +1,4 @@
-package com.sda.botaonavergar.out;
+package com.sda.botaonavergar.gru;
 
 import android.view.View;
 import android.widget.TextView;
@@ -11,17 +11,19 @@ import com.sda.botaonavergar.util.ItemClickListener;
 /**
  * made by sda
  */
-public class OutroHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+public class GrupoHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-    public TextView nome, valor;
+    public TextView ppt, nome, valor;
     public ItemClickListener itemClickListener;
 
 
-    public OutroHolder(View itemView) {
+    public GrupoHolder(View itemView) {
         super(itemView);
         //ASSIGN
-        nome = itemView.findViewById(R.id.modelo_dois_um);
-        valor = itemView.findViewById(R.id.modelo_dois_dois);
+        ppt = itemView.findViewById(R.id.modelo_tres_edit_primeiro);
+        nome = itemView.findViewById(R.id.modelo_tres_edit_segundo);
+        valor = itemView.findViewById(R.id.modelo_tres_edit_terceiro);
+
         itemView.setOnClickListener(this);
     }
 

@@ -1,4 +1,5 @@
-package com.sda.botaonavergar.out;
+package com.sda.botaonavergar.user;
+
 
 import android.view.View;
 import android.widget.TextView;
@@ -11,17 +12,17 @@ import com.sda.botaonavergar.util.ItemClickListener;
 /**
  * made by sda
  */
-public class OutroHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+public class UserHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-    public TextView nome, valor;
+    public TextView iduser, inivel;
     public ItemClickListener itemClickListener;
 
 
-    public OutroHolder(View itemView) {
+    public UserHolder(View itemView) {
         super(itemView);
         //ASSIGN
-        nome = itemView.findViewById(R.id.modelo_dois_um);
-        valor = itemView.findViewById(R.id.modelo_dois_dois);
+        iduser = itemView.findViewById(R.id.modelo_dois_um);
+        inivel = itemView.findViewById(R.id.modelo_dois_dois);
         itemView.setOnClickListener(this);
     }
 

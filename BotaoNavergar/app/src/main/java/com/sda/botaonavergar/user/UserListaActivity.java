@@ -1,4 +1,5 @@
-package com.sda.botaonavergar.out;
+package com.sda.botaonavergar.user;
+
 
 import android.content.Context;
 import android.database.Cursor;
@@ -10,9 +11,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Update;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.sda.botaonavergar.R;
+import com.sda.botaonavergar.turno.Turno;
+import com.sda.botaonavergar.turno.TurnoAdapter;
+import com.sda.botaonavergar.turno.TurnoDao;
 import com.sda.botaonavergar.util.Utilidades;
 
 import java.util.ArrayList;
@@ -20,14 +25,14 @@ import java.util.ArrayList;
 /**
  * made by sda
  */
-public class OutroListaActivity extends AppCompatActivity {
+public class UserListaActivity extends AppCompatActivity {
 
     private Utilidades msg;
     private Context ctx;
 
-    private ArrayList<Outro> outros = new ArrayList<>();
+    private ArrayList<User> users = new ArrayList<>();
     private RecyclerView rv;
-    private OutroAdapter adapter;
+    private UserAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +45,9 @@ public class OutroListaActivity extends AppCompatActivity {
         rv.setLayoutManager(new LinearLayoutManager(this));
         rv.setItemAnimator(new DefaultItemAnimator());
 
-        adapter = new OutroAdapter(ctx, outros);
+        adapter = new UserAdapter(ctx, users);
 
-        buscarOutro();
+
 
         FloatingActionButton fab = findViewById(R.id.fab_rodape_fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -52,32 +57,32 @@ public class OutroListaActivity extends AppCompatActivity {
             }
         });
 
+        buscar();
 
     }
 
     private void iniciaComponentes(){
-
         TextView tv = findViewById(R.id.titulo);
-        tv.setText(getResources().getString(R.string.listar_outros));
+        tv.setText(getResources().getString(R.string.usu_rio));
         tv.setTextSize(40);
 
         msg = new Utilidades();
         ctx = this;
     }
 
-    private void buscarOutro(){
-        OutroDao dao = new OutroDao(ctx);
+    private void buscar(){
+        UserDao dao = new UserDao(ctx);
         dao.openDB();
-        outros.clear();
-        Cursor cs = dao.busca();
+        users.clear();
+        Cursor cs = dao.buscar();
         while (cs.moveToNext()){
             int id = cs.getInt(0);
-            String nome = cs.getString(1);
-            double vlr = cs.getDouble(2);
-            Outro out = new Outro(id,nome, vlr);
-            outros.add(out);
+            String snome = cs.getString(1);
+            String  scargo = cs.getString(2);
+            User user = new User(id, snome, scargo);
+            users.add(user);
         }
-        if (!(outros.size() < 1)){
+        if (!(users.size() < 1)){
             rv.setAdapter(adapter);
         }
         dao.close();
@@ -86,6 +91,6 @@ public class OutroListaActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        buscarOutro();
+        buscar();
     }
 }

@@ -1,12 +1,14 @@
-package com.sda.botaonavergar.out;
+package com.sda.botaonavergar.user;
 
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
@@ -14,37 +16,38 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.sda.botaonavergar.R;
+import com.sda.botaonavergar.turno.TurnoDao;
 import com.sda.botaonavergar.util.Constantes;
 import com.sda.botaonavergar.util.Utilidades;
 
 /**
  * made by sda
  */
-public class OutroAtualizaActivity extends AppCompatActivity {
+public class UserAtualizaActivity extends AppCompatActivity {
 
-    private EditText enome, evalor;
+    private Spinner user, nivel;
     private AlertDialog alerta;
     private Button btdireito, btesquerdo;
-    private int id = 0;
-    private String snome;
-    private double dvalor;
+    private int id = 0, iuser, inivel;
     private Context ctx;
     private Utilidades msg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.dois_activity);
+        setContentView(R.layout.dois_spinner_activity);
 
-        ctx = this;
+        ctx = getApplicationContext();
         msg = new Utilidades();
 
         //RECEIVE DATA FROM MAIN ACTIVITY
         Intent i = getIntent();
 
         id = i.getExtras().getInt(Constantes.ID);
-        snome = i.getExtras().getString(Constantes.NOME);
-        dvalor = i.getExtras().getDouble(Constantes.VALOR);
+        inivel = i.getExtras().getInt(Constantes.CARGO);
+        iuser = i.getExtras().getInt(Constantes.NOME);
+
+
 
         iniciaComponentes();
 
@@ -55,25 +58,24 @@ public class OutroAtualizaActivity extends AppCompatActivity {
                 finish();
             }
         });
+
     }
 
     private void iniciaComponentes() {
 
-        enome = findViewById(R.id.dois_primeiro_tv);
-        evalor = findViewById(R.id.dois_segundo_tv);
+        nivel = findViewById(R.id.spn_primeiro_tv);
+
+        user = findViewById(R.id.spn_segundo_tv);
 
         TextView tv = findViewById(R.id.titulo);
-        tv.setText(getResources().getString(R.string.atualiza_outro));
+        tv.setText(getResources().getString(R.string.atualiza_user));
         tv.setTextSize(40);
 
-        enome.setText(snome);
-        evalor.setText(String.valueOf(dvalor));
 
         btdireito = findViewById(R.id.bts_direita);
-        btesquerdo = findViewById(R.id.bts_esquerda);
         btdireito.setText(getResources().getString(R.string.atualizar));
+        btesquerdo = findViewById(R.id.bts_esquerda);
         btesquerdo.setText(getResources().getString(R.string.apagar));
-
 
     }
 
@@ -86,13 +88,13 @@ public class OutroAtualizaActivity extends AppCompatActivity {
                 avisoAcaoDeletar();
                 break;
         }
-
     }
 
+
     private void deletar(int id) {
-        OutroDao dao = new OutroDao(ctx);
+        UserDao dao = new UserDao(ctx);
         dao.openDB();
-        long resultado = dao.apaga(id);
+        long resultado = dao.apagar(id);
         if (resultado != 0) {
             msg.mensagenCurta(ctx, "Dados Deletados com Sucesso ");
         } else {
@@ -102,10 +104,10 @@ public class OutroAtualizaActivity extends AppCompatActivity {
         finish();
     }
 
-    private void atualizar(int id, String nome, double valor) {
-        OutroDao db = new OutroDao(ctx);
+    private void atualizar(int id, String user, String cargo) {
+        UserDao db = new UserDao(ctx);
         db.openDB();
-        long result = db.atualiza(id, nome, valor);
+        long result = db.atualiza(id, user, cargo);
         if (result > 0) {
             msg.mensagenCurta(ctx, getResources().getString(R.string.msg_dados_atualizados));
         } else {
@@ -126,7 +128,7 @@ public class OutroAtualizaActivity extends AppCompatActivity {
         //define um botão como positivo
         builder.setPositiveButton(R.string.sim, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface arg0, int arg1) {
-                atualizar(id, enome.getText().toString(), Double.parseDouble(evalor.getText().toString()));
+                atualizar(id, user.getSelectedItem().toString(), nivel.getSelectedItem().toString());
             }
         });
         //define um botão como negativo.
@@ -159,7 +161,7 @@ public class OutroAtualizaActivity extends AppCompatActivity {
         builder.setNegativeButton(R.string.nao, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface arg0, int arg1) {
                 finish();
-                msg.mensagenCurta(ctx, getResources().getString(R.string.msg_acao_cancelada));
+                msg.mensagenCurta(ctx, String.valueOf(R.string.msg_acao_cancelada));
             }
         });
         //cria o AlertDialog

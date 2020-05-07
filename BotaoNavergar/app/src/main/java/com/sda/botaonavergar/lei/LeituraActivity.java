@@ -1,43 +1,48 @@
-package com.sda.botaonavergar.out;
+package com.sda.botaonavergar.lei;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.sda.botaonavergar.R;
+import com.sda.botaonavergar.empresa.EmpresaDao;
 import com.sda.botaonavergar.util.Utilidades;
 
-public class OutroActivity extends AppCompatActivity {
+public class LeituraActivity extends AppCompatActivity {
 
-    private EditText enome, evalor;
+    private EditText enumero, eentrada, esaida;
     private Utilidades msg;
     private Context ctx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.dois_activity);
+        setContentView(R.layout.empresa_activity);
 
         iniciaComponentes();
     }
 
     private void iniciaComponentes() {
-        enome = findViewById(R.id.chq_segundo_tv);
-        enome.setHint("Descreva");
-        evalor = findViewById(R.id.chq_primeiro_tv);
-        evalor.setHint("Valor");
+        enumero = findViewById(R.id.et_empresa_nome);
+        enumero.setHint(getResources().getString(R.string.n_mero));
+        enumero.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_NORMAL);
+
+        eentrada = findViewById(R.id.et_empresa_endereco);
+        eentrada.setHint(getResources().getString(R.string.entrada));
+        eentrada.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_NORMAL);
+
+        esaida = findViewById(R.id.et_empresa_telefone);
+        esaida.setHint(getResources().getString(R.string.saida));
+        esaida.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_NORMAL);
+
         msg = new Utilidades();
         ctx = this;
-
-        TextView titulo = findViewById(R.id.titulo);
-        titulo.setText(getResources().getString(R.string.outros));
-        titulo.setTextSize(40);
 
         FloatingActionButton fab = findViewById(R.id.fab_buttons_rodape);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -54,14 +59,14 @@ public class OutroActivity extends AppCompatActivity {
                 verificaCampos();
                 break;
             case R.id.bts_esquerda:
-                startActivity(new Intent(ctx, OutroListaActivity.class));
+                startActivity(new Intent(ctx, LeituraListaActivity.class));
                 break;
         }
 
     }
 
     private void verificaCampos() {
-        if(enome.getText().toString().equals("") || evalor.getText().toString().equals("")){
+        if(enumero.getText().toString().equals("") || eentrada.getText().toString().equals("")|| esaida.getText().toString().equals("")){
              msg.mensagenCurta(ctx, getResources().getString(R.string.msg_erro_campos_vazios));
         }else {
             salvar();
@@ -71,12 +76,13 @@ public class OutroActivity extends AppCompatActivity {
 
     private void salvar() {
             //salva na variael os valores do editTexts
-            String s_nome = enome.getText().toString();
-            double dvalor = Double.parseDouble(evalor.getText().toString());
+            int inumero = Integer.parseInt(enumero.getText().toString());
+            int ientrada = Integer.parseInt(eentrada.getText().toString());
+            int isaida = Integer.parseInt(esaida.getText().toString());
             //salva no banco os dados guardados nas variaveis
-            OutroDao dao = new OutroDao(ctx);
+            LeituraDao dao = new LeituraDao(ctx);
             dao.openDB();
-            long salvou = dao.adiciona(s_nome, dvalor);
+            long salvou = dao.adiciona(inumero, ientrada, isaida);
             if (salvou != 0) {
                 msg.mensagenLonga(ctx, "Dados Salvos com Sucesso.");
             } else {
@@ -86,8 +92,9 @@ public class OutroActivity extends AppCompatActivity {
     }
 
     private void limpaCampos(){
-        enome.setText("");
-        enome.requestFocus();
-        evalor.setText("");
+        enumero.setText("");
+        enumero.requestFocus();
+        eentrada.setText("");
+        esaida.setText("");
     }
 }

@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fundo_degrade"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/fechamento"
+        android:textColor="@color/branco"
+        android:textSize="@dimen/texto30"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/date"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/usu_rio"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/turno"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/entrada"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/saida"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/sangria"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/pr_mios"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/salario"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/despesas"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/outros"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/v_feitos"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/v_pago"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/b_nus"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/cartoes"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/cheque"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/dinheiro"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/diferen_a"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fc_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/data"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:id="@+id/fc_usu_rio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/usu_rio"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:id="@+id/fc_turno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/turno"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:id="@+id/fc_entrada"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/entrada"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:id="@+id/fc_saida"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/saida"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:id="@+id/fc_sangria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/sangria"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:id="@+id/fc_pr_mios"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/pr_mios"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:id="@+id/fc_salario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/salario"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:id="@+id/fc_despesas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/despesas"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:id="@+id/fc_outros"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/outros"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:id="@+id/fc_v_feitos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/v_feitos"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:id="@+id/fc_v_pago"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/v_pago"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:id="@+id/fc_b_nus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/b_nus"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:id="@+id/fc_cartoes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/cartoes"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:id="@+id/fc_cheque"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/cheque"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:id="@+id/fc_dinheiro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/dinheiro"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+            <TextView
+                android:id="@+id/fc_diferen_a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="5"
+                android:gravity="center"
+                android:text="@string/diferen_a"
+                android:textColor="@color/branco"
+                android:textSize="@dimen/texto20" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <include layout="@layout/rodape_fab"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

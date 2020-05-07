@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/fundo_degrade"
+    android:layout_height="match_parent"
+    tools:context=".chq.ChequeActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/imagens"
+        android:layout_height="@dimen/imagens"
+        android:layout_marginTop="90dp"
+        android:layout_marginBottom="242dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon2" />
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:textColor="@color/branco"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/chq_primeiro_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="nome"
+        android:inputType="textCapCharacters"
+        android:textColor="@color/branco"
+        android:textColorHint="@color/branco"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        android:autofillHints="no" />
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/chq_segundo_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:gravity="center"
+        android:spinnerMode="dialog"
+        android:background="@color/branco"
+        app:layout_constraintStart_toStartOf="@+id/chq_primeiro_tv"
+        app:layout_constraintTop_toBottomOf="@+id/chq_primeiro_tv" />
+    <EditText
+        android:id="@+id/chq_terceiro_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="agencia"
+        android:inputType="number"
+        android:textColor="@color/branco"
+        android:textColorHint="@color/branco"
+        app:layout_constraintStart_toStartOf="@+id/chq_segundo_tv"
+        app:layout_constraintTop_toBottomOf="@+id/chq_segundo_tv" />
+    <EditText
+        android:id="@+id/chq_quarto_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="cheque"
+        android:inputType="textPhonetic"
+        android:textColor="@color/branco"
+        android:textColorHint="@color/branco"
+        app:layout_constraintStart_toStartOf="@+id/chq_terceiro_tv"
+        app:layout_constraintTop_toBottomOf="@+id/chq_terceiro_tv" />
+    <EditText
+        android:id="@+id/chq_quinto_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="valor"
+        android:inputType="numberDecimal"
+        android:textColor="@color/branco"
+        android:textColorHint="@color/branco"
+        app:layout_constraintStart_toStartOf="@+id/chq_quarto_tv"
+        app:layout_constraintTop_toBottomOf="@+id/chq_quarto_tv" />
+    <TextView
+        android:id="@+id/chq_sexto_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="9"
+        android:gravity="center"
+        android:textSize="@dimen/texto20"
+        android:text="@string/data"
+        android:clickable="true"
+        android:onClick="onClickRodape"
+        android:textColor="@color/branco"
+        app:layout_constraintStart_toStartOf="@+id/chq_quinto_tv"
+        app:layout_constraintTop_toBottomOf="@+id/chq_quinto_tv" />
+    <TextView
+        android:id="@+id/chq_setimo_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="9"
+        android:gravity="center"
+        android:text="@string/depositar"
+        android:textSize="@dimen/texto20"
+        android:clickable="true"
+        android:onClick="onClickRodape"
+        android:textColor="@color/branco"
+        app:layout_constraintStart_toStartOf="@+id/chq_sexto_tv"
+        app:layout_constraintTop_toBottomOf="@+id/chq_sexto_tv" />
+
+    <include
+        layout="@layout/rodape_buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
