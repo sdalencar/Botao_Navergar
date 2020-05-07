@@ -293,7 +293,7 @@
                 android:textColor="@color/branco"
                 android:textSize="@dimen/texto20" />
             <TextView
-                android:id="@+id/fc_v_feitos"
+                android:id="@+id/fc_v_feito"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
